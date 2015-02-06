@@ -28,7 +28,7 @@ define(["require", "exports", '../style/ClassList', '../../ObservableEvented'], 
             this._classList.set(value);
         };
         Widget.prototype._indexGetter = function () {
-            return this._parent ? this._parent.getChildIndex(this) : -1;
+            return this._parent && this._parent.getChildIndex ? this._parent.getChildIndex(this) : -1;
         };
         Widget.prototype.destroy = function () {
             this._parent && this._parent.remove && this._parent.remove(this);

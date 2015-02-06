@@ -116,6 +116,9 @@ define(["require", "exports", './has', 'dojo/_base/lang', './LogLevel', './Obser
                 errorHandler: {
                     constructor: resolve('./ErrorHandler')
                 },
+                i18n: {
+                    constructor: resolve('./I18n')
+                },
                 scheduler: {
                     constructor: resolve('./Scheduler')
                 }

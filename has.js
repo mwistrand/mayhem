@@ -4,6 +4,7 @@ define(["require", "exports", 'dojo/has'], function (require, exports, has) {
     has.add('es6-weak-map', typeof WeakMap !== 'undefined');
     has.add('es7-object-observe', 'observe' in Object);
     has.add('raf', typeof requestAnimationFrame === 'function');
+    has.add('intl', typeof Intl !== 'undefined');
     if (typeof window !== 'undefined') {
         var minimumWindowDimension = Math.min(window.innerWidth, window.innerHeight);
         has.add('phone', has('touch') && minimumWindowDimension <= 640);

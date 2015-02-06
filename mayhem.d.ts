@@ -443,43 +443,6 @@ declare module 'mayhem/ui/style/ClassList' {
 	export = ClassList;
 
 }
-declare module 'mayhem/ui/AddPosition' {
-	 enum AddPosition {
-	    FIRST = 0,
-	    LAST = -1,
-	}
-	export = AddPosition;
-
-}
-declare module 'mayhem/ui/Container' {
-	import AddPosition = require('mayhem/ui/AddPosition');
-	import Widget = require('mayhem/ui/Widget');
-	interface Container extends Widget {
-	    get: Container.Getters;
-	    on: Container.Events;
-	    set: Container.Setters;
-	    add(child: Widget, position?: AddPosition): IHandle;
-	    add(child: Widget, position?: number): IHandle;
-	    empty(): void;
-	    getChildIndex(child: Widget): number;
-	    remove(position: number): void;
-	    remove(child: Widget): void;
-	} module Container {
-	    interface Events extends Widget.Events {
-	    }
-	    interface Getters extends Widget.Getters {
-	        (key: 'children'): Widget[];
-	    }
-	    interface Setters extends Widget.Setters {
-	        (key: 'children', value: Widget[]): void;
-	    }
-	} var Container: {
-	    new (kwArgs: HashMap<any>): Container;
-	    prototype: Container;
-	};
-	export = Container;
-
-}
 declare module 'mayhem/ui/Master' {
 	import core = require('mayhem/interfaces');
 	import ObservableEvented = require('mayhem/ObservableEvented');
@@ -783,6 +746,9 @@ declare module 'mayhem/WebApplication' {
 	            errorHandler: {
 	                constructor: string;
 	            };
+	            i18n: {
+	                constructor: string;
+	            };
 	            scheduler: {
 	                constructor: string;
 	            };
@@ -833,7 +799,6 @@ declare module 'mayhem/WebApplication' {
 }
 declare module 'mayhem/ui/Widget' {
 	import ClassList = require('mayhem/ui/style/ClassList');
-	import Container = require('mayhem/ui/Container');
 	import core = require('mayhem/interfaces');
 	import ObservableEvented = require('mayhem/ObservableEvented');
 	import WebApplication = require('mayhem/WebApplication');
@@ -860,14 +825,14 @@ declare module 'mayhem/ui/Widget' {
 	        (key: 'id'): string;
 	        (key: 'index'): number;
 	        (key: 'isAttached'): boolean;
-	        (key: 'parent'): Container;
+	        (key: 'parent'): Widget;
 	    }
 	    interface Setters extends ObservableEvented.Setters {
 	        (key: 'app', value: WebApplication): void;
 	        (key: 'class', value: string): void;
 	        (key: 'id', value: string): void;
 	        (key: 'isAttached', value: boolean): void;
-	        (key: 'parent', value: Container): void;
+	        (key: 'parent', value: Widget): void;
 	    }
 	} var Widget: {
 	    new (kwArgs: HashMap<any>): Widget;
@@ -966,6 +931,9 @@ declare module 'mayhem/Application' {
 	            errorHandler: {
 	                constructor: string;
 	            };
+	            i18n: {
+	                constructor: string;
+	            };
 	            scheduler: {
 	                constructor: string;
 	            };
@@ -1057,6 +1025,46 @@ declare module 'mayhem/Event' {
 	    stopPropagation(): void;
 	}
 	export = Event;
+
+}
+declare module 'mayhem/i18n/IntlMessageFormat' {
+	 var out: typeof IntlMessageFormat;
+	export = out;
+
+}
+declare module 'mayhem/I18n' {
+	import currencyFormatter = require('dojo/currency');
+	import dateFormatter = require('dojo/date/locale');
+	import numberFormatter = require('dojo/number');
+	import Observable = require('mayhem/Observable');
+	import Promise = require('mayhem/Promise'); class I18n extends Observable {
+	    private _loadedBundles;
+	    protected _locale: string;
+	    protected _messages: I18n.Dictionary;
+	    get: I18n.Getters;
+	    set: I18n.Setters;
+	    _initialize(): void;
+	    formatCurrency(amount: number, options?: currencyFormatter.IFormatOptions): string;
+	    formatDate(date: Date, options?: dateFormatter.IFormatOptions): string;
+	    formatNumber(number: number, options?: numberFormatter.IFormatOptions): string;
+	    protected _getDefaultLocale(): string;
+	    loadBundle(id: string): Promise<void>;
+	    parseCurrency(amount: string, options?: currencyFormatter.IParseOptions): number;
+	    parseDate(date: string, options?: dateFormatter.IFormatOptions): Date;
+	    parseNumber(number: string, options?: numberFormatter.IParseOptions): number;
+	    run(): Promise<void>;
+	    switchToLocale(locale: string): Promise<void>;
+	} module I18n {
+	    type Dictionary = HashMap<(values: {}) => string>;
+	    interface Getters extends Observable.Getters {
+	        (key: 'locale'): string;
+	        (key: 'messages'): I18n.Dictionary;
+	    }
+	    interface Setters extends Observable.Setters {
+	        (key: 'locale', value: string): void;
+	    }
+	}
+	export = I18n;
 
 }
 declare module 'mayhem/WeakMap' {
@@ -1837,10 +1845,46 @@ declare module 'mayhem/ui/dom/actions' {
 	export var click: (target: Widget, callback: Function) => IHandle;
 
 }
+declare module 'mayhem/ui/AddPosition' {
+	 enum AddPosition {
+	    FIRST = 0,
+	    LAST = -1,
+	}
+	export = AddPosition;
+
+}
+declare module 'mayhem/ui/Container' {
+	import AddPosition = require('mayhem/ui/AddPosition');
+	import Widget = require('mayhem/ui/Widget');
+	interface Container extends Widget {
+	    get: Container.Getters;
+	    on: Container.Events;
+	    set: Container.Setters;
+	    add(child: Widget, position?: AddPosition): IHandle;
+	    add(child: Widget, position?: number): IHandle;
+	    empty(): void;
+	    getChildIndex(child: Widget): number;
+	    remove(position: number): void;
+	    remove(child: Widget): void;
+	} module Container {
+	    interface Events extends Widget.Events {
+	    }
+	    interface Getters extends Widget.Getters {
+	        (key: 'children'): Widget[];
+	    }
+	    interface Setters extends Widget.Setters {
+	        (key: 'children', value: Widget[]): void;
+	    }
+	} var Container: {
+	    new (kwArgs: HashMap<any>): Container;
+	    prototype: Container;
+	};
+	export = Container;
+
+}
 declare module 'mayhem/ui/common/Widget' {
 	import ClassList = require('mayhem/ui/style/ClassList');
 	import core = require('mayhem/interfaces');
-	import IContainer = require('mayhem/ui/Container');
 	import IWidget = require('mayhem/ui/Widget');
 	import ObservableEvented = require('mayhem/ObservableEvented');
 	import WebApplication = require('mayhem/WebApplication'); class Widget extends ObservableEvented implements IWidget {
@@ -1871,7 +1915,7 @@ declare module 'mayhem/ui/common/Widget' {
 	    /**
 	     * @protected
 	     */
-	    _parent: IContainer;
+	    _parent: IWidget;
 	    get: Widget.Getters;
 	    on: Widget.Events;
 	    set: Widget.Setters;
@@ -1902,118 +1946,8 @@ declare module 'mayhem/ui/common/Widget' {
 	export = Widget;
 
 }
-declare module 'mayhem/ui/common/Container' {
-	import Widget = require('mayhem/ui/Widget'); class ContainerMixin {
-	    private _children;
-	    private _isAttached;
-	    get: Widget.Getters;
-	    add(child: Widget): void;
-	    /**
-	     * @protected
-	     */
-	    _childrenGetter(): Widget[];
-	    /**
-	     * @protected
-	     */
-	    _childrenSetter(children: Widget[]): void;
-	    destroy(): void;
-	    empty(): void;
-	    getChildIndex(child: Widget): number;
-	    _initialize(): void;
-	    /**
-	     * @protected
-	     */
-	    _isAttachedGetter(): boolean;
-	    _isAttachedSetter(value: boolean): void;
-	    remove(child: Widget): void;
-	}
-	export = ContainerMixin;
-
-}
-declare module 'mayhem/ui/dom/MultiNodeWidget' {
-	import Widget = require('mayhem/ui/dom/Widget'); class MultiNodeWidget extends Widget {
-	    /**
-	     * @protected
-	     * @get
-	     */
-	    _firstNode: Comment;
-	    /**
-	     * @protected
-	     */
-	    _fragment: DocumentFragment;
-	    /**
-	     * @protected
-	     * @get
-	     */
-	    _lastNode: Comment;
-	    get: MultiNodeWidget.Getters;
-	    on: MultiNodeWidget.Events;
-	    set: MultiNodeWidget.Setters;
-	    constructor(kwArgs?: HashMap<any>);
-	    destroy(): void;
-	    detach(): DocumentFragment;
-	    _render(): void;
-	} module MultiNodeWidget {
-	    interface Events extends Widget.Events {
-	    }
-	    interface Getters extends Widget.Getters {
-	        (key: 'firstNode'): Comment;
-	        (key: 'lastNode'): Comment;
-	    }
-	    interface Setters extends Widget.Setters {
-	    }
-	}
-	export = MultiNodeWidget;
-
-}
-declare module 'mayhem/ui/dom/Container' {
-	import AddPosition = require('mayhem/ui/AddPosition');
-	import IContainer = require('mayhem/ui/Container');
-	import MultiNodeWidget = require('mayhem/ui/dom/MultiNodeWidget');
-	import Widget = require('mayhem/ui/dom/Widget'); class Container extends MultiNodeWidget implements IContainer {
-	    /**
-	     * @protected
-	     */
-	    _children: Widget[];
-	    get: Container.Getters;
-	    on: Container.Events;
-	    set: Container.Setters;
-	    constructor(kwArgs?: HashMap<any>);
-	    _initialize(): void;
-	    add(child: Widget, position?: AddPosition): IHandle;
-	    add(child: Widget, position?: number): IHandle;
-	    /**
-	     * @protected
-	     */
-	    _childrenGetter(): Widget[];
-	    /**
-	     * @protected
-	     */
-	    _childrenSetter(children: Widget[]): void;
-	    destroy(): void;
-	    empty(): void;
-	    getChildIndex(child: Widget): number;
-	    /**
-	     * @protected
-	     */
-	    _isAttachedGetter(): boolean;
-	    _isAttachedSetter(value: boolean): void;
-	    remove(index: number): void;
-	    remove(child: Widget): void;
-	} module Container {
-	    interface Events extends MultiNodeWidget.Events, IContainer.Events {
-	    }
-	    interface Getters extends MultiNodeWidget.Getters, IContainer.Getters {
-	    }
-	    interface Setters extends MultiNodeWidget.Setters, IContainer.Setters {
-	    }
-	}
-	export = Container;
-
-}
 declare module 'mayhem/ui/dom/Widget' {
-	import CommonWidget = require('mayhem/ui/common/Widget');
-	import Container = require('mayhem/ui/dom/Container'); class Widget extends CommonWidget {
+	import CommonWidget = require('mayhem/ui/common/Widget'); class Widget extends CommonWidget {
 	    get: Widget.Getters;
 	    on: Widget.Events;
 	    set: Widget.Setters;
@@ -2027,7 +1961,7 @@ declare module 'mayhem/ui/dom/Widget' {
 	    interface Getters extends CommonWidget.Getters {
 	        (key: 'firstNode'): Node;
 	        (key: 'lastNode'): Node;
-	        (key: 'parent'): Container;
+	        (key: 'parent'): Widget;
 	    }
 	    interface Setters extends CommonWidget.Setters {
 	    }
@@ -2158,6 +2092,42 @@ declare module 'mayhem/ui/dom/events/EventManager' {
 	export = EventManager;
 
 }
+declare module 'mayhem/ui/dom/MultiNodeWidget' {
+	import Widget = require('mayhem/ui/dom/Widget'); class MultiNodeWidget extends Widget {
+	    /**
+	     * @protected
+	     * @get
+	     */
+	    _firstNode: Comment;
+	    /**
+	     * @protected
+	     */
+	    _fragment: DocumentFragment;
+	    /**
+	     * @protected
+	     * @get
+	     */
+	    _lastNode: Comment;
+	    get: MultiNodeWidget.Getters;
+	    on: MultiNodeWidget.Events;
+	    set: MultiNodeWidget.Setters;
+	    constructor(kwArgs?: HashMap<any>);
+	    destroy(): void;
+	    detach(): DocumentFragment;
+	    _render(): void;
+	} module MultiNodeWidget {
+	    interface Events extends Widget.Events {
+	    }
+	    interface Getters extends Widget.Getters {
+	        (key: 'firstNode'): Comment;
+	        (key: 'lastNode'): Comment;
+	    }
+	    interface Setters extends Widget.Setters {
+	    }
+	}
+	export = MultiNodeWidget;
+
+}
 declare module 'mayhem/ui/dom/View' {
 	import IView = require('mayhem/ui/View');
 	import MultiNodeWidget = require('mayhem/ui/dom/MultiNodeWidget'); class View extends MultiNodeWidget implements IView {
@@ -2253,7 +2223,6 @@ declare module 'mayhem/templating/html/peg/html' {
 }
 declare module 'mayhem/templating/html' {
 	import binding = require('mayhem/binding/interfaces');
-	import Container = require('mayhem/ui/dom/Container');
 	import Widget = require('mayhem/ui/dom/Widget');
 	export interface WidgetConstructor {
 	    new (kwArgs?: HashMap<any>): BindableWidget;
@@ -2289,11 +2258,11 @@ declare module 'mayhem/templating/html' {
 	    /**
 	     * @protected
 	     */
-	    _parentGetter(): Container;
+	    _parentGetter(): Widget;
 	    /**
 	     * @protected
 	     */
-	    _parentSetter(value: Container): void;
+	    _parentSetter(value: Widget): void;
 	}
 	/**
 	 * Creates a Widget constructor from an HTML template.
@@ -2376,6 +2345,79 @@ declare module 'mayhem/templating/html/ui/Conditional' {
 	    }
 	}
 	export = Conditional;
+
+}
+declare module 'mayhem/ui/common/Container' {
+	import Widget = require('mayhem/ui/Widget'); class ContainerMixin {
+	    private _children;
+	    private _isAttached;
+	    get: Widget.Getters;
+	    add(child: Widget): void;
+	    /**
+	     * @protected
+	     */
+	    _childrenGetter(): Widget[];
+	    /**
+	     * @protected
+	     */
+	    _childrenSetter(children: Widget[]): void;
+	    destroy(): void;
+	    empty(): void;
+	    getChildIndex(child: Widget): number;
+	    _initialize(): void;
+	    /**
+	     * @protected
+	     */
+	    _isAttachedGetter(): boolean;
+	    _isAttachedSetter(value: boolean): void;
+	    remove(child: Widget): void;
+	}
+	export = ContainerMixin;
+
+}
+declare module 'mayhem/ui/dom/Container' {
+	import AddPosition = require('mayhem/ui/AddPosition');
+	import IContainer = require('mayhem/ui/Container');
+	import MultiNodeWidget = require('mayhem/ui/dom/MultiNodeWidget');
+	import Widget = require('mayhem/ui/dom/Widget'); class Container extends MultiNodeWidget implements IContainer {
+	    /**
+	     * @protected
+	     */
+	    _children: Widget[];
+	    get: Container.Getters;
+	    on: Container.Events;
+	    set: Container.Setters;
+	    constructor(kwArgs?: HashMap<any>);
+	    _initialize(): void;
+	    add(child: Widget, position?: AddPosition): IHandle;
+	    add(child: Widget, position?: number): IHandle;
+	    /**
+	     * @protected
+	     */
+	    _childrenGetter(): Widget[];
+	    /**
+	     * @protected
+	     */
+	    _childrenSetter(children: Widget[]): void;
+	    destroy(): void;
+	    empty(): void;
+	    getChildIndex(child: Widget): number;
+	    /**
+	     * @protected
+	     */
+	    _isAttachedGetter(): boolean;
+	    _isAttachedSetter(value: boolean): void;
+	    remove(index: number): void;
+	    remove(child: Widget): void;
+	} module Container {
+	    interface Events extends MultiNodeWidget.Events, IContainer.Events {
+	    }
+	    interface Getters extends MultiNodeWidget.Getters, IContainer.Getters {
+	    }
+	    interface Setters extends MultiNodeWidget.Setters, IContainer.Setters {
+	    }
+	}
+	export = Container;
 
 }
 declare module 'mayhem/templating/html/ui/Element' {
