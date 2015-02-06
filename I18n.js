@@ -34,6 +34,7 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
             this._loadedBundles = {};
             this._locale = this._getDefaultLocale();
             this._messages = {};
+            this._preload = [];
         };
         I18n.prototype.formatCurrency = function (amount, options) {
             if (options === void 0) { options = {}; }
@@ -73,13 +74,12 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
             return locale;
         };
         I18n.prototype.loadBundle = function (id) {
-            id = 'dojo/i18n!' + id;
             if (this._loadedBundles[id]) {
                 return Promise.resolve(undefined);
             }
             this._loadedBundles[id] = true;
             var locale = this.get('locale');
-            var bundleId = id.replace('/nls/', '/nls/' + locale + '/');
+            var bundleId = 'dojo/i18n!' + id.replace('/nls/', '/nls/' + locale + '/');
             var self = this;
             return util.getModule(bundleId).then(function (bundle) {
                 mergeBundle(locale, bundleId, self._messages, bundle);
@@ -110,12 +110,16 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
             return numberFormatter.parse(number, options);
         };
         I18n.prototype.run = function () {
+            var preload = this.get('preload');
+            for (var i = 0, j = preload.length; i < j; ++i) {
+                this._loadedBundles[preload[i]] = true;
+            }
             return this.switchToLocale(this.get('locale'));
         };
         I18n.prototype.switchToLocale = function (locale) {
             this.set('locale', null);
             var bundleIds = Object.keys(this._loadedBundles).map(function (bundleId) {
-                return bundleId.replace('/nls/', '/nls/' + locale + '/');
+                return 'dojo/i18n!' + bundleId.replace('/nls/', '/nls/' + locale + '/');
             });
             var self = this;
             return util.getModules(bundleIds.concat([

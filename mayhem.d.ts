@@ -1041,6 +1041,7 @@ declare module 'mayhem/I18n' {
 	    private _loadedBundles;
 	    protected _locale: string;
 	    protected _messages: I18n.Dictionary;
+	    protected _preload: string[];
 	    get: I18n.Getters;
 	    set: I18n.Setters;
 	    _initialize(): void;
@@ -1059,9 +1060,11 @@ declare module 'mayhem/I18n' {
 	    interface Getters extends Observable.Getters {
 	        (key: 'locale'): string;
 	        (key: 'messages'): I18n.Dictionary;
+	        (key: 'preload'): string[];
 	    }
 	    interface Setters extends Observable.Setters {
 	        (key: 'locale', value: string): void;
+	        (key: 'preload', value: string[]): void;
 	    }
 	}
 	export = I18n;
