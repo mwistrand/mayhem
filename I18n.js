@@ -36,6 +36,9 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
             this._messages = {};
             this._preload = [];
         };
+        I18n.prototype._formatCurrencyDependencies = function () {
+            return ['locale'];
+        };
         I18n.prototype.formatCurrency = function (amount, options) {
             if (options === void 0) { options = {}; }
             if (!options.locale) {
@@ -44,6 +47,9 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
             }
             return currencyFormatter.format(amount, options);
         };
+        I18n.prototype._formatDateDependencies = function () {
+            return ['locale'];
+        };
         I18n.prototype.formatDate = function (date, options) {
             if (options === void 0) { options = {}; }
             if (!options.locale) {
@@ -51,6 +57,9 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
                 options.locale = this.get('locale');
             }
             return dateFormatter.format(date, options);
+        };
+        I18n.prototype._formatNumberDependencies = function () {
+            return ['locale'];
         };
         I18n.prototype.formatNumber = function (number, options) {
             if (options === void 0) { options = {}; }
@@ -85,6 +94,9 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
                 mergeBundle(locale, bundleId, self._messages, bundle);
             });
         };
+        I18n.prototype._parseCurrencyDependencies = function () {
+            return ['locale'];
+        };
         I18n.prototype.parseCurrency = function (amount, options) {
             if (options === void 0) { options = {}; }
             if (!options.locale) {
@@ -93,6 +105,9 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
             }
             return currencyFormatter.parse(amount, options);
         };
+        I18n.prototype._parseDateDependencies = function () {
+            return ['locale'];
+        };
         I18n.prototype.parseDate = function (date, options) {
             if (options === void 0) { options = {}; }
             if (!options.locale) {
@@ -100,6 +115,9 @@ define(["require", "exports", 'dojo/currency', 'dojo/date/locale', './has', './i
                 options.locale = this.get('locale');
             }
             return dateFormatter.parse(date, options);
+        };
+        I18n.prototype._parseNumberDependencies = function () {
+            return ['locale'];
         };
         I18n.prototype.parseNumber = function (number, options) {
             if (options === void 0) { options = {}; }

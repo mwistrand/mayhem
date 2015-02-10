@@ -1,3 +1,10 @@
+/// <reference path="../dgrid/dgrid.d.ts" />
+/// <reference path="../dojo/dojo.d.ts" />
+/// <reference path="../dojo/dijit.d.ts" />
+/// <reference path="../dstore/dstore.d.ts" />
+/// <reference path="../esprima/esprima.d.ts" />
+/// <reference path="../intl-messageformat/intl-messageformat.d.ts" />
+/// <reference path="../xstyle/xstyle.d.ts" />
 declare module 'mayhem/binding/BindDirection' {
 	 enum DataBindingDirection {
 	    /**
@@ -1045,13 +1052,19 @@ declare module 'mayhem/I18n' {
 	    get: I18n.Getters;
 	    set: I18n.Setters;
 	    _initialize(): void;
+	    _formatCurrencyDependencies(): string[];
 	    formatCurrency(amount: number, options?: currencyFormatter.IFormatOptions): string;
+	    _formatDateDependencies(): string[];
 	    formatDate(date: Date, options?: dateFormatter.IFormatOptions): string;
+	    _formatNumberDependencies(): string[];
 	    formatNumber(number: number, options?: numberFormatter.IFormatOptions): string;
 	    protected _getDefaultLocale(): string;
 	    loadBundle(id: string): Promise<void>;
+	    _parseCurrencyDependencies(): string[];
 	    parseCurrency(amount: string, options?: currencyFormatter.IParseOptions): number;
+	    _parseDateDependencies(): string[];
 	    parseDate(date: string, options?: dateFormatter.IFormatOptions): Date;
+	    _parseNumberDependencies(): string[];
 	    parseNumber(number: string, options?: numberFormatter.IParseOptions): number;
 	    run(): Promise<void>;
 	    switchToLocale(locale: string): Promise<void>;
