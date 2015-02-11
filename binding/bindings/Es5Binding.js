@@ -101,4 +101,4 @@ define(["require", "exports", '../Binding', '../../has', '../../util'], function
     })(Binding);
     return Es5Binding;
 });
-//# sourceMappingURL=Es5Binding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/Es5Binding.js.map

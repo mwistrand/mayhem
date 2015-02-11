@@ -71,4 +71,4 @@ define(["require", "exports", 'dojo/hash', 'dojo/io-query', 'dojo/_base/lang', '
     })(Router);
     return HashRouter;
 });
-//# sourceMappingURL=HashRouter.js.map
+//# sourceMappingURL=../_debug/routing/HashRouter.js.map

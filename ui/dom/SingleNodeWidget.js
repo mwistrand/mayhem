@@ -30,4 +30,4 @@ define(["require", "exports", './Widget'], function (require, exports, Widget) {
     })(Widget);
     return SingleNodeWidget;
 });
-//# sourceMappingURL=SingleNodeWidget.js.map
+//# sourceMappingURL=../../_debug/ui/dom/SingleNodeWidget.js.map

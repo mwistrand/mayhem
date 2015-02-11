@@ -165,4 +165,4 @@ define(["require", "exports", '../util', '../../../Event', 'dojo/_base/lang', '.
     })();
     return EventManager;
 });
-//# sourceMappingURL=EventManager.js.map
+//# sourceMappingURL=../../../_debug/ui/dom/events/EventManager.js.map

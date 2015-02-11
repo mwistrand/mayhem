@@ -40,4 +40,4 @@ define(["require", "exports", '../has', '../Observable'], function (require, exp
     User.prototype._isAuthenticated = false;
     return User;
 });
-//# sourceMappingURL=User.js.map
+//# sourceMappingURL=../_debug/auth/User.js.map

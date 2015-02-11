@@ -97,4 +97,4 @@ define(["require", "exports", '../../binding/BindDirection', 'dojo/_base/lang', 
     })(SingleNodeWidget);
     return DijitWidget;
 });
-//# sourceMappingURL=DijitWidget.js.map
+//# sourceMappingURL=../../_debug/ui/dom/DijitWidget.js.map

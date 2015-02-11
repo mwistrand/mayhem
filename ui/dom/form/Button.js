@@ -36,4 +36,4 @@ define(["require", "exports", 'dijit/form/Button', '../DijitWidget', '../../../u
     Button.prototype._formattedLabel = '';
     return Button;
 });
-//# sourceMappingURL=Button.js.map
+//# sourceMappingURL=../../../_debug/ui/dom/form/Button.js.map

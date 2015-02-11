@@ -14,4 +14,4 @@ define(["require", "exports", './Widget'], function (require, exports, Widget) {
     })(Widget);
     return View;
 });
-//# sourceMappingURL=View.js.map
+//# sourceMappingURL=../../_debug/ui/common/View.js.map

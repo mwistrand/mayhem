@@ -34,4 +34,4 @@ define(["require", "exports", './util', './Widget'], function (require, exports,
     })(Widget);
     return MultiNodeWidget;
 });
-//# sourceMappingURL=MultiNodeWidget.js.map
+//# sourceMappingURL=../../_debug/ui/dom/MultiNodeWidget.js.map

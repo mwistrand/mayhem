@@ -5,4 +5,4 @@ define(["require", "exports", '../has', "./dom/Label"], function (require, expor
     }
     return Label;
 });
-//# sourceMappingURL=Label.js.map
+//# sourceMappingURL=../_debug/ui/Label.js.map

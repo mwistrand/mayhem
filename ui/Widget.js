@@ -5,4 +5,4 @@ define(["require", "exports", '../has', "./dom/Widget"], function (require, expo
     }
     return Widget;
 });
-//# sourceMappingURL=Widget.js.map
+//# sourceMappingURL=../_debug/ui/Widget.js.map

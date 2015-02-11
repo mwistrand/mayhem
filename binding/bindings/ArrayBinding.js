@@ -87,4 +87,4 @@ define(["require", "exports", '../Binding'], function (require, exports, Binding
     })(Binding);
     return ArrayBinding;
 });
-//# sourceMappingURL=ArrayBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/ArrayBinding.js.map

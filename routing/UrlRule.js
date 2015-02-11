@@ -182,4 +182,4 @@ define(["require", "exports", 'dojo/_base/array', 'dojo/io-query', '../Observabl
     })(UrlRule || (UrlRule = {}));
     return UrlRule;
 });
-//# sourceMappingURL=UrlRule.js.map
+//# sourceMappingURL=../_debug/routing/UrlRule.js.map

@@ -6,4 +6,4 @@ define(["require", "exports"], function (require, exports) {
     })(DataBindingDirection || (DataBindingDirection = {}));
     return DataBindingDirection;
 });
-//# sourceMappingURL=BindDirection.js.map
+//# sourceMappingURL=../_debug/binding/BindDirection.js.map

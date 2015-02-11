@@ -234,4 +234,4 @@ define(["require", "exports", 'dojo/_base/array', '../has', '../Observable', '..
     Model.prototype._app = null;
     return Model;
 });
-//# sourceMappingURL=Model.js.map
+//# sourceMappingURL=../_debug/data/Model.js.map

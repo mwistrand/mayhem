@@ -256,4 +256,4 @@ define(["require", "exports", '../../../binding/BindDirection', '../../../ui/dom
     })(Container);
     return ElementWidget;
 });
-//# sourceMappingURL=Element.js.map
+//# sourceMappingURL=../../../_debug/templating/html/ui/Element.js.map

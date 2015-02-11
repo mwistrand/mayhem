@@ -82,4 +82,4 @@ define(["require", "exports", 'dojo/_base/array', '../Binding', 'dojo/_base/lang
     })(Binding);
     return NestedBinding;
 });
-//# sourceMappingURL=NestedBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/NestedBinding.js.map

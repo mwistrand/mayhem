@@ -6,4 +6,4 @@ define(["require", "exports"], function (require, exports) {
     })(AddPosition || (AddPosition = {}));
     return AddPosition;
 });
-//# sourceMappingURL=AddPosition.js.map
+//# sourceMappingURL=../_debug/ui/AddPosition.js.map

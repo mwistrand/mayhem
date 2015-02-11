@@ -52,4 +52,4 @@ define(["require", "exports", '../../form/CheckboxValue', 'dijit/form/CheckBox',
     Checkbox.prototype._value = 0 /* FALSE */;
     return Checkbox;
 });
-//# sourceMappingURL=Checkbox.js.map
+//# sourceMappingURL=../../../_debug/ui/dom/form/Checkbox.js.map

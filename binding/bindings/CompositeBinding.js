@@ -50,4 +50,4 @@ define(["require", "exports", 'dojo/_base/array', '../Binding', '../../util'], f
     })(Binding);
     return CompositeBinding;
 });
-//# sourceMappingURL=CompositeBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/CompositeBinding.js.map

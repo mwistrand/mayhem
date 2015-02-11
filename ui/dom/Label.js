@@ -33,4 +33,4 @@ define(["require", "exports", 'dojo/dom-construct', './util', './MultiNodeWidget
     })(MultiNodeWidget);
     return Label;
 });
-//# sourceMappingURL=Label.js.map
+//# sourceMappingURL=../../_debug/ui/dom/Label.js.map

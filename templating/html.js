@@ -182,4 +182,4 @@ define(["require", "exports", 'dojo/_base/array', 'dojo/_base/lang', './html/peg
     }
     exports.normalize = normalize;
 });
-//# sourceMappingURL=html.js.map
+//# sourceMappingURL=../_debug/templating/html.js.map

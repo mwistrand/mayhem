@@ -119,4 +119,4 @@ define(["require", "exports", 'dojo/_base/array', '../Observable', '../Promise',
     })(Observable);
     return Router;
 });
-//# sourceMappingURL=Router.js.map
+//# sourceMappingURL=../_debug/routing/Router.js.map

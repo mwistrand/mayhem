@@ -46,4 +46,4 @@ define(["require", "exports", '../Binding', '../../util'], function (require, ex
     })(Binding);
     return Es7Binding;
 });
-//# sourceMappingURL=Es7Binding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/Es7Binding.js.map

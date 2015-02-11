@@ -42,4 +42,4 @@ define(["require", "exports", '../Binding'], function (require, exports, Binding
     })(Binding);
     return CollectionLengthBinding;
 });
-//# sourceMappingURL=CollectionLengthBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/CollectionLengthBinding.js.map

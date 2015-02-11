@@ -5,4 +5,4 @@ define(["require", "exports", '../../has', "../dom/form/Checkbox"], function (re
     }
     return Checkbox;
 });
-//# sourceMappingURL=Checkbox.js.map
+//# sourceMappingURL=../../_debug/ui/form/Checkbox.js.map

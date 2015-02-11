@@ -34,4 +34,4 @@ define(["require", "exports", '../Binding', '../../util'], function (require, ex
     })(Binding);
     return ObjectTargetBinding;
 });
-//# sourceMappingURL=ObjectTargetBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/ObjectTargetBinding.js.map

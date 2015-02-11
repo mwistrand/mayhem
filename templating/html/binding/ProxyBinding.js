@@ -63,4 +63,4 @@ define(["require", "exports", '../../../binding/Binding', 'dojo/_base/lang'], fu
     })(Binding);
     return ProxyBinding;
 });
-//# sourceMappingURL=ProxyBinding.js.map
+//# sourceMappingURL=../../../_debug/templating/html/binding/ProxyBinding.js.map

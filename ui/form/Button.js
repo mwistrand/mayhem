@@ -5,4 +5,4 @@ define(["require", "exports", '../../has', "../dom/form/Button"], function (requ
     }
     return Button;
 });
-//# sourceMappingURL=Button.js.map
+//# sourceMappingURL=../../_debug/ui/form/Button.js.map

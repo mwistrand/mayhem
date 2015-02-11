@@ -6,4 +6,4 @@ define(["require", "exports", 'dojo/errors/create'], function (require, exports,
     RoutingError = createError('RoutingError', Ctor, Error, {});
     return RoutingError;
 });
-//# sourceMappingURL=RoutingError.js.map
+//# sourceMappingURL=../_debug/routing/RoutingError.js.map

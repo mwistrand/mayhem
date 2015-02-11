@@ -26,4 +26,4 @@ define(["require", "exports", './actions', '../common/Widget'], function (requir
     };
     return Widget;
 });
-//# sourceMappingURL=Widget.js.map
+//# sourceMappingURL=../../_debug/ui/dom/Widget.js.map

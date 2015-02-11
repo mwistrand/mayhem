@@ -58,4 +58,4 @@ define(["require", "exports", './Model'], function (require, exports, Model) {
     PersistentModel.prototype._scenario = 'insert';
     return PersistentModel;
 });
-//# sourceMappingURL=PersistentModel.js.map
+//# sourceMappingURL=../_debug/data/PersistentModel.js.map

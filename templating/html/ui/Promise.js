@@ -111,4 +111,4 @@ define(["require", "exports", '../../../ui/dom/MultiNodeWidget', '../../../Promi
     PromiseWidget.prototype._fulfilledSetter = createSetter('_fulfilled');
     return PromiseWidget;
 });
-//# sourceMappingURL=Promise.js.map
+//# sourceMappingURL=../../../_debug/templating/html/ui/Promise.js.map

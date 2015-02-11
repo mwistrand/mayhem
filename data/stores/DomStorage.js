@@ -61,4 +61,4 @@ define(["require", "exports", 'dojo/_base/declare', 'dstore/Memory', '../../util
     });
     return DomStorage;
 });
-//# sourceMappingURL=DomStorage.js.map
+//# sourceMappingURL=../../_debug/data/stores/DomStorage.js.map

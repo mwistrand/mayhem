@@ -154,4 +154,4 @@ define(["require", "exports", '../Binding', 'esprima', '../../util'], function (
     })(Binding);
     return ObjectMethodBinding;
 });
-//# sourceMappingURL=ObjectMethodBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/ObjectMethodBinding.js.map

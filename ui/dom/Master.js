@@ -83,4 +83,4 @@ define(["require", "exports", './events/EventManager', './MultiNodeWidget', '../
     })(MultiNodeWidget);
     return Master;
 });
-//# sourceMappingURL=Master.js.map
+//# sourceMappingURL=../../_debug/ui/dom/Master.js.map

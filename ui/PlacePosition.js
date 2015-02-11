@@ -10,4 +10,4 @@ define(["require", "exports"], function (require, exports) {
     })(PlacePosition || (PlacePosition = {}));
     return PlacePosition;
 });
-//# sourceMappingURL=PlacePosition.js.map
+//# sourceMappingURL=../_debug/ui/PlacePosition.js.map

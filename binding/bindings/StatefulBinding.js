@@ -45,4 +45,4 @@ define(["require", "exports", '../Binding', '../../util'], function (require, ex
     })(Binding);
     return StatefulBinding;
 });
-//# sourceMappingURL=StatefulBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/StatefulBinding.js.map

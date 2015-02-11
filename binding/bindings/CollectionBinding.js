@@ -47,4 +47,4 @@ define(["require", "exports", '../Binding', '../../util'], function (require, ex
     })(Binding);
     return CollectionBinding;
 });
-//# sourceMappingURL=CollectionBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/CollectionBinding.js.map

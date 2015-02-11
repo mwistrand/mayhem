@@ -334,4 +334,4 @@ define(["require", "exports", '../util', '../../../has', 'dojo/_base/lang', '../
     })();
     return PointerManager;
 });
-//# sourceMappingURL=PointerManager.js.map
+//# sourceMappingURL=../../../_debug/ui/dom/events/PointerManager.js.map

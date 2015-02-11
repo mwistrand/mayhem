@@ -53,4 +53,4 @@ define(["require", "exports", '../style/ClassList', '../../ObservableEvented'], 
     })(ObservableEvented);
     return Widget;
 });
-//# sourceMappingURL=Widget.js.map
+//# sourceMappingURL=../../_debug/ui/common/Widget.js.map

@@ -10,4 +10,4 @@ define(["require", "exports", 'dojo/errors/create', 'dojo/_base/lang'], function
     BindingError = createError('BindingError', Ctor, Error, {});
     return BindingError;
 });
-//# sourceMappingURL=BindingError.js.map
+//# sourceMappingURL=../_debug/binding/BindingError.js.map

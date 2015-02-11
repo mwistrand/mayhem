@@ -38,4 +38,4 @@ define(["require", "exports", '../Binding'], function (require, exports, Binding
     })(Binding);
     return ObservableBinding;
 });
-//# sourceMappingURL=ObservableBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/ObservableBinding.js.map

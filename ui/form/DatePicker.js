@@ -5,4 +5,4 @@ define(["require", "exports", '../../has', "../dom/form/DatePicker"], function (
     }
     return DatePicker;
 });
-//# sourceMappingURL=DatePicker.js.map
+//# sourceMappingURL=../../_debug/ui/form/DatePicker.js.map

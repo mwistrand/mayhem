@@ -35,4 +35,4 @@ define(["require", "exports", '../util'], function (require, exports, util) {
     })();
     return Binding;
 });
-//# sourceMappingURL=Binding.js.map
+//# sourceMappingURL=../_debug/binding/Binding.js.map

@@ -89,4 +89,4 @@ define(["require", "exports", '../ui/dom/util', 'dojo/io-query', './Request', '.
     })(Router);
     return Router;
 });
-//# sourceMappingURL=HtmlHistoryRouter.js.map
+//# sourceMappingURL=../_debug/routing/HtmlHistoryRouter.js.map

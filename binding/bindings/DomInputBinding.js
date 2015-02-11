@@ -39,4 +39,4 @@ define(["require", "exports", './ObjectTargetBinding', 'dojo/on'], function (req
     })(ObjectTargetBinding);
     return DomInputBinding;
 });
-//# sourceMappingURL=DomInputBinding.js.map
+//# sourceMappingURL=../../_debug/binding/bindings/DomInputBinding.js.map

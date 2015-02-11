@@ -5,4 +5,4 @@ define(["require", "exports", '../has', "./dom/Dialog"], function (require, expo
     }
     return Dialog;
 });
-//# sourceMappingURL=Dialog.js.map
+//# sourceMappingURL=../_debug/ui/Dialog.js.map

@@ -205,4 +205,4 @@ define(["require", "exports", './BindDirection', './BindingError', '../has', 'do
     })();
     return Binder;
 });
-//# sourceMappingURL=Binder.js.map
+//# sourceMappingURL=../_debug/binding/Binder.js.map

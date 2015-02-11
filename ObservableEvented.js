@@ -31,4 +31,4 @@ define(["require", "exports", 'dojo/Evented', './Observable'], function (require
     };
     return ObservableEvented;
 });
-//# sourceMappingURL=ObservableEvented.js.map
+//# sourceMappingURL=_debug/ObservableEvented.js.map
